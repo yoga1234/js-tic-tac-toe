@@ -1,5 +1,6 @@
 /* font Lato and Roboto */
 @import url('https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap');
+
 /* start screen related style */
 
 body {
@@ -12,18 +13,21 @@ body {
 
 .container {
   margin: 50px auto 0 auto;
-  width: 500px;
-  height: 550px;
+  padding: 20px;
+  width: max-content;
+  height: max-content;
   background-color: #ADE1E5;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  transition: 0.5s all ease;
 }
 
 .start-banner-container {
-  margin: 50px auto 0 auto;
+  margin: 10px auto 10px auto;
+  padding: 10px;
   width: 80%;
-  height: 150px;
+  height: max-content;
   border-radius: 5px;
   background-color: #99D19C;
   -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
@@ -32,7 +36,7 @@ body {
 }
 
 .start-banner-text {
-  margin: 50px auto 0 auto;
+  margin: 0 auto 0 auto;
   padding: 0;
   color: #fff;
   width: max-content;
