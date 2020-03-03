@@ -44,7 +44,7 @@ function buttonPlay() {
         }
         
         // generating event listener to the game board
-
+        document.querySelectorAll('.block-part').forEach(key => key.addEventListener('click', function(e){console.log(e.target.dataset.block)}))
     }
 }
 
