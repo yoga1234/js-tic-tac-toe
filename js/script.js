@@ -5,6 +5,9 @@ const gameScreen = document.querySelector('.game-screen')
 const startButton = document.querySelector('.start-button') // getting start button
 const playButton = document.querySelector('.play-button') // getting the play button
 
+const gameBoard = document.querySelector('.game-board') // getting the game board
+
+// name input
 const playerOneName = document.querySelector('.player-one-input') // getting player 1 name
 const playerTwoName = document.querySelector('.player-two-input') // getting player 2 name
 

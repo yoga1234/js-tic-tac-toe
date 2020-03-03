@@ -16,7 +16,7 @@ body {
   background-color: rgba(199, 185, 212, 0.466);
 }
 .container {
-  margin: 50px auto 0 auto;
+  margin: 15px auto 0 auto;
   padding: 20px;
   width: max-content;
   height: max-content;
@@ -212,13 +212,25 @@ body {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
 .game-board {
-  width: 450px;
-  height: 450px;
+  width: 456px;
+  height: 456px;
   margin: 0 auto 0 auto;
   border-radius: 10px;
   background-color: #79C7C5;
   -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
   -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
+}
+.block-container {
+  width: 456px;
+  height: 456px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.block-part {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #fff;
+  border-radius: 10px;
 }
 /* game-screen end */
