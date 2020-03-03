@@ -20,8 +20,7 @@ function createBlock(dataset) {
     let divBlock = document.createElement('div') // creating a div
     divBlock.classList.add('block-part')
     divBlock.setAttribute('data-block', dataset) // creating custom dataset
-    blockContainer.appendChild(divBlock)
-    
+    blockContainer.appendChild(divBlock) 
 }
 
 function buttonStart() {
@@ -43,6 +42,9 @@ function buttonPlay() {
         for(let i = 1; i <= 9; i++) {
             createBlock(i)
         }
+        
+        // generating event listener to the game board
+
     }
 }
 
