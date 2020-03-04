@@ -20,6 +20,7 @@ function createBlock(dataset) {
     let divBlock = document.createElement('div') // creating a div
     divBlock.classList.add('block-part')
     divBlock.setAttribute('data-block', dataset) // creating custom dataset
+    divBlock.innerHTML = 'x'
     blockContainer.appendChild(divBlock) 
 }
 
