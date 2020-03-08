@@ -5,7 +5,6 @@ const gameScreen = document.querySelector('.game-screen')
 const startButton = document.querySelector('.start-button') // getting start button
 const playButton = document.querySelector('.play-button') // getting the play button
 
-const gameBoard = document.querySelector('.game-board') // getting the game board
 const blockContainer = document.querySelector('.block-container') // getting the block container
 
 // name input
@@ -16,37 +15,55 @@ const playerTwoName = document.querySelector('.player-two-input') // getting pla
 const playerOneScreen = document.getElementById('player-one-screen')
 const playerTwoScreen = document.getElementById('player-two-screen')
 
+// game playing related start
+let gameBoard = ['', '', '', '', '', '', '', '', '']
+let playerPlay = 1
+
+function playingGame(e) {
+	
+	// check the current player
+	if(playerPlay == 1){
+		e.target.innerHTML = 'x'
+		playerPlay = 2
+	} else if(playerPlay == 2){
+		e.target.innerHTML = 'o'
+		playerPlay = 1
+	}
+
+}
+
+// game playing related end
+
 function createBlock(dataset) {
-    let divBlock = document.createElement('div') // creating a div
-    divBlock.classList.add('block-part')
-    divBlock.setAttribute('data-block', dataset) // creating custom dataset
-    divBlock.innerHTML = 'x'
-    blockContainer.appendChild(divBlock) 
+	let divBlock = document.createElement('div') // creating a div
+	divBlock.classList.add('block-part')
+	divBlock.setAttribute('data-block', dataset) // creating custom dataset
+	blockContainer.appendChild(divBlock) 
 }
 
 function buttonStart() {
-    startScreenContainer.style.display = "none"
-    inputPlayerScreen.style.display = "block"
+	startScreenContainer.style.display = "none"
+	inputPlayerScreen.style.display = "block"
 }
 
 function buttonPlay() {
-    // check if the player is entering the name
-    if(!playerOneName.value || !playerTwoName.value) {
-        alert('Please enter name for player!')
-    } else {
-        inputPlayerScreen.style.display = 'none'
-        gameScreen.style.display = 'block'
-        playerOneScreen.innerHTML = playerOneName.value
-        playerTwoScreen.innerHTML = playerTwoName.value
+	// check if the player is entering the name
+	if(!playerOneName.value || !playerTwoName.value) {
+		alert('Please enter name for player!')
+	} else {
+		inputPlayerScreen.style.display = 'none'
+		gameScreen.style.display = 'block'
+		playerOneScreen.innerHTML = playerOneName.value + ' - play'
+		playerTwoScreen.innerHTML = playerTwoName.value
 
-        // creating the block for game
-        for(let i = 1; i <= 9; i++) {
-            createBlock(i)
-        }
-        
-        // generating event listener to the game board
-        document.querySelectorAll('.block-part').forEach(key => key.addEventListener('click', function(e){console.log(e.target.dataset.block)}))
-    }
+		// creating the block for game
+		for(let i = 1; i <= 9; i++) {
+			createBlock(i)
+		}
+		
+		// generating event listener to the game board
+		document.querySelectorAll('.block-part').forEach(key => key.addEventListener('click', playingGame))
+	}
 }
 
 startButton.addEventListener('click', buttonStart) // start button
