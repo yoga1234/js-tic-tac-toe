@@ -15,17 +15,29 @@ const playerTwoName = document.querySelector('.player-two-input') // getting pla
 const playerOneScreen = document.getElementById('player-one-screen')
 const playerTwoScreen = document.getElementById('player-two-screen')
 
+// getting card for player
+const gamePlayerOne = document.querySelector('.game-player-one')
+const gamePlayerTwo = document.querySelector('.game-player-two')
+
+// removing doubleclick
+document.ondblclick = function() { return false }
+
 // game playing related start
 let gameBoard = ['', '', '', '', '', '', '', '', '']
 let playerPlay = 1
 
+
+
 function playingGame(e) {
-	
 	// check the current player
 	if(playerPlay == 1){
+		gamePlayerOne.classList.add('add-opacity')
+		gamePlayerTwo.classList.remove('add-opacity')
 		e.target.innerHTML = 'x'
 		playerPlay = 2
 	} else if(playerPlay == 2){
+		gamePlayerOne.classList.remove('add-opacity')
+		gamePlayerTwo.classList.add('add-opacity')
 		e.target.innerHTML = 'o'
 		playerPlay = 1
 	}
@@ -36,7 +48,7 @@ function playingGame(e) {
 
 function createBlock(dataset) {
 	let divBlock = document.createElement('div') // creating a div
-	divBlock.classList.add('block-part')
+	divBlock.classList.add('block-part', 'no-select')
 	divBlock.setAttribute('data-block', dataset) // creating custom dataset
 	blockContainer.appendChild(divBlock) 
 }
@@ -53,7 +65,7 @@ function buttonPlay() {
 	} else {
 		inputPlayerScreen.style.display = 'none'
 		gameScreen.style.display = 'block'
-		playerOneScreen.innerHTML = playerOneName.value + ' - play'
+		playerOneScreen.innerHTML = playerOneName.value
 		playerTwoScreen.innerHTML = playerTwoName.value
 
 		// creating the block for game
