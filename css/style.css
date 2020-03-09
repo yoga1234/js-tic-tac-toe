@@ -256,6 +256,22 @@ body {
 .block-part:hover {
   opacity: 0.75;
 }
+.show-the-winner {
+  font-size: 2rem;
+  color: #fff;
+  background-color: rgba(4, 0, 255, 0.55);
+  border-radius: 10px;;
+  width: max-content;
+  height: max-content;
+  margin: 20px auto 20px auto;
+  padding: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
+}
 .after-game {
   display: none;
   justify-content: space-between;
