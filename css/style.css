@@ -35,7 +35,7 @@ body {
 }
 /* start screen start */
 .start-screen-container {
-  display: block;
+  display: none;
 }
 .start-banner-container {
   margin: 10px auto 10px auto;
@@ -183,7 +183,7 @@ body {
 /* game-screen start */
 .game-screen {
   /* display should be flex */
-  display: none;
+  display: block;
   flex-direction: column;
 }
 .player-section {
@@ -255,6 +255,34 @@ body {
 }
 .block-part:hover {
   opacity: 0.75;
+}
+.after-game {
+  display: flex;
+  justify-content: space-between;
+}
+.new-game {
+  border-radius: 10px;
+  width: max-content;
+  height: max-content;
+  padding: 20px;
+  background-color: #0986d0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #fff;
+}
+.restart-game {
+  border-radius: 10px;
+  width: max-content;
+  height: max-content;
+  padding: 20px;
+  background-color: #09c7d0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #fff;
 }
 /* game-screen end */
 /* no selectable text */
