@@ -35,7 +35,7 @@ body {
 }
 /* start screen start */
 .start-screen-container {
-  display: none;
+  display: block;
 }
 .start-banner-container {
   margin: 10px auto 10px auto;
@@ -183,7 +183,7 @@ body {
 /* game-screen start */
 .game-screen {
   /* display should be flex */
-  display: block;
+  display: none;
   flex-direction: column;
 }
 .player-section {
@@ -257,8 +257,9 @@ body {
   opacity: 0.75;
 }
 .after-game {
-  display: flex;
+  display: none;
   justify-content: space-between;
+  margin-top: 20px;
 }
 .new-game {
   border-radius: 10px;
@@ -271,6 +272,11 @@ body {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: #fff;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
+  transition: 0.3s all ease;
 }
 .restart-game {
   border-radius: 10px;
@@ -283,7 +289,19 @@ body {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: #fff;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
+  transition: 0.3s all ease;
 }
+.new-game:hover,
+.restart-game:hover {
+  -webkit-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.4);
+}
+
 /* game-screen end */
 /* no selectable text */
 .no-select {

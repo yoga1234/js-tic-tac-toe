@@ -19,6 +19,9 @@ const playerTwoScreen = document.getElementById('player-two-screen')
 const gamePlayerOne = document.querySelector('.game-player-one')
 const gamePlayerTwo = document.querySelector('.game-player-two')
 
+// getting the after game button
+const afterGame = document.querySelector('.after-game')
+
 // removing doubleclick
 document.ondblclick = function() { return false }
 
@@ -39,7 +42,8 @@ function checkTheWinner(markPattern){
 		markPattern[0] == 'x' && markPattern[4] == 'x' && markPattern[8] == 'x' ||
 		markPattern[2] == 'x' && markPattern[4] == 'x' && markPattern[6] == 'x'
 	){
-			console.log('Player using x is win')
+		console.log('Player using x is win')
+		afterGame.style.display = 'flex'
 	} else if(
 		markPattern[0] == 'o' && markPattern[1] == 'o' && markPattern[2] == 'o' ||
 		markPattern[3] == 'o' && markPattern[4] == 'o' && markPattern[5] == 'o' ||
@@ -50,6 +54,7 @@ function checkTheWinner(markPattern){
 		markPattern[0] == 'o' && markPattern[4] == 'o' && markPattern[8] == 'o' ||
 		markPattern[2] == 'o' && markPattern[4] == 'o' && markPattern[6] == 'o'
 	){
+		afterGame.style.display = 'flex'
 		console.log('Player using o is win')
 	}
 }
