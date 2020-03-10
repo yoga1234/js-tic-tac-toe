@@ -19,6 +19,9 @@ const playerTwoScreen = document.getElementById('player-two-screen')
 const gamePlayerOne = document.querySelector('.game-player-one')
 const gamePlayerTwo = document.querySelector('.game-player-two')
 
+// getting the winner banner
+const showTheWinner = document.querySelector('.show-the-winner')
+
 // getting the after game button
 const afterGame = document.querySelector('.after-game')
 
@@ -28,10 +31,11 @@ document.ondblclick = function() { return false }
 // game playing related start
 let gameBoard = []
 let playerPlay = 1
+let gameIsFinish
 
 // check for the winner
 function checkTheWinner(markPattern){
-	console.log(markPattern)
+	
 	if(
 		markPattern[0] == 'x' && markPattern[1] == 'x' && markPattern[2] == 'x' ||
 		markPattern[3] == 'x' && markPattern[4] == 'x' && markPattern[5] == 'x' ||
@@ -42,8 +46,11 @@ function checkTheWinner(markPattern){
 		markPattern[0] == 'x' && markPattern[4] == 'x' && markPattern[8] == 'x' ||
 		markPattern[2] == 'x' && markPattern[4] == 'x' && markPattern[6] == 'x'
 	){
-		console.log('Player using x is win')
 		afterGame.style.display = 'flex'
+		showTheWinner.style.display = 'block'
+		showTheWinner.innerHTML = playerOneName.value + '\'s win'
+		document.querySelector('.game-board').classList.add('add-opacity')
+		gameIsFinish = true
 	} else if(
 		markPattern[0] == 'o' && markPattern[1] == 'o' && markPattern[2] == 'o' ||
 		markPattern[3] == 'o' && markPattern[4] == 'o' && markPattern[5] == 'o' ||
@@ -55,26 +62,36 @@ function checkTheWinner(markPattern){
 		markPattern[2] == 'o' && markPattern[4] == 'o' && markPattern[6] == 'o'
 	){
 		afterGame.style.display = 'flex'
-		console.log('Player using o is win')
+		showTheWinner.style.display = 'block'
+		showTheWinner.innerHTML = playerTwoName.value + '\'s win'
+		document.querySelector('.game-board').classList.add('add-opacity')
+		gameIsFinish = true
 	}
 }
 
 function playingGame(e) {
-	console.log(e.target.dataset.block)
-	// check the current player
-	if(playerPlay == 1){
-		gamePlayerOne.classList.add('add-opacity')
-		gamePlayerTwo.classList.remove('add-opacity')
-		e.target.innerHTML = 'x'
-		gameBoard[ e.target.dataset.block -1 ] = 'x'
-		playerPlay = 2
-	} else if(playerPlay == 2){
-		gamePlayerOne.classList.remove('add-opacity')
-		gamePlayerTwo.classList.add('add-opacity')
-		e.target.innerHTML = 'o'
-		gameBoard[ e.target.dataset.block -1 ] = 'o'
-		playerPlay = 1
+	// check if the game is already finished
+	if(!gameIsFinish){
+		// check if the block is not empty
+		if (e.target.innerHTML == '') {
+			// check the current player
+			if(playerPlay == 1){
+				gamePlayerOne.classList.add('add-opacity')
+				gamePlayerTwo.classList.remove('add-opacity')
+				e.target.innerHTML = 'x'
+				gameBoard[ e.target.dataset.block -1 ] = 'x'
+				playerPlay = 2
+			} else if(playerPlay == 2){
+				gamePlayerOne.classList.remove('add-opacity')
+				gamePlayerTwo.classList.add('add-opacity')
+				e.target.innerHTML = 'o'
+				gameBoard[ e.target.dataset.block -1 ] = 'o'
+				playerPlay = 1
+			}
+		}
 	}
+	
+	
 
 	// check for the winner
 	checkTheWinner(gameBoard)

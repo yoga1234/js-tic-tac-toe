@@ -257,6 +257,7 @@ body {
   opacity: 0.75;
 }
 .show-the-winner {
+  display: none;
   font-size: 2rem;
   color: #fff;
   background-color: rgba(4, 0, 255, 0.55);
