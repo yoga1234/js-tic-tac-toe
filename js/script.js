@@ -25,13 +25,24 @@ const showTheWinner = document.querySelector('.show-the-winner')
 // getting the after game button
 const afterGame = document.querySelector('.after-game')
 
-// removing doubleclick
-document.ondblclick = function() { return false }
+// new/restart game button
+const newGame = document.querySelector('.new-game')
+const restartGame = document.querySelector('.restart-game')
 
 // game playing related start
 let gameBoard = []
 let playerPlay = 1
 let gameIsFinish
+
+// new game function
+function processNewGame() {
+	location.reload()
+}
+
+//restart game function
+function processRestartGame() {
+	console.log('creating a restart game')
+}
 
 // check for the winner
 function checkTheWinner(markPattern){
@@ -136,3 +147,15 @@ function buttonPlay() {
 
 startButton.addEventListener('click', buttonStart) // start button
 playButton.addEventListener('click', buttonPlay) // play button
+newGame.addEventListener('click', processNewGame) // new game
+restartGame.addEventListener('click', processRestartGame) // restart game
+
+/*
+	NOTE: for restart game
+	remove all mark on the gameboard
+*/
+
+/*
+	NOTE: for new game
+	go back into the input playername or from the beginning of the app.
+*/
