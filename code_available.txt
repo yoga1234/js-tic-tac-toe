@@ -1,0 +1,30 @@
+-- GLOBAL_VARIABLE --
+1. startScreenContainer
+2. inputPlayerScreen
+3. gameScreen
+4. startButton
+5. playButton
+6. blockContainer
+7. playerOneName
+8. playerTwoName
+9. playerOneScreen
+10. playerTwoScreen
+11. gamePlayerOne
+12. gamePlayerTwo
+13. showTheWinner
+14. afterGame
+15. newGame
+16. restartGame
+17. gameBoard
+18. playerPlay
+19. gameIsFinish
+
+-- FUNCTION --
+1. processNewGame()
+2. processRestartGame()
+3. checkTheWinner()
+4. playingGame()
+5. createBlock()
+6. buttonStart()
+7. buttonPlay()
+8. 
