@@ -41,7 +41,17 @@ function processNewGame() {
 
 //restart game function
 function processRestartGame() {
-	console.log('creating a restart game')
+	gameBoard = []
+	playerPlay = 1
+	gameIsFinish = false
+	document.querySelectorAll('.block-part').forEach(function(item, index){
+		item.innerHTML = ''
+	})
+	document.querySelector('.game-board').classList.remove('add-opacity')
+	gamePlayerOne.classList.remove('add-opacity')
+	gamePlayerTwo.classList.add('add-opacity')
+	showTheWinner.style.display = 'none'
+	afterGame.style.display = 'none'
 }
 
 // check for the winner
